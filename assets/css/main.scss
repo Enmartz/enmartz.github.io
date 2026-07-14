@@ -1,0 +1,51 @@
+---
+---
+@charset "utf-8";
+
+@use "sass:math";
+@use "sass:string";
+
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default: "930px" }}
+);
+
+@use "themes";
+@use "layout";
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/* Local palette: royal blue with navy and cyan companions. */
+:root {
+  --global-code-bg-color: rgba(65, 105, 225, 0.07);
+  --global-theme-color: #4169e1;
+  --global-hover-color: #173a8f;
+  --global-footer-bg-color: #173a8f;
+  --global-footer-text-color: #eaf1ff;
+  --global-footer-link-color: #ffffff;
+  --global-highlight-color: #173a8f;
+}
+
+html[data-theme="dark"] {
+  --global-bg-color: #101827;
+  --global-code-bg-color: #172033;
+  --global-text-color: #eef4ff;
+  --global-text-color-light: #a9b8d0;
+  --global-theme-color: #5cc8ff;
+  --global-hover-color: #8bd8ff;
+  --global-footer-bg-color: #081225;
+  --global-footer-text-color: #dce7ff;
+  --global-footer-link-color: #5cc8ff;
+  --global-distill-app-color: #a9b8d0;
+  --global-divider-color: rgba(92, 200, 255, 0.18);
+  --global-card-bg-color: #172033;
+  --global-newsletter-bg-color: #172033;
+  --global-newsletter-text-color: #eef4ff;
+}
