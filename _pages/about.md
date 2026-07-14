@@ -10,7 +10,7 @@ profile:
   image_circular: true
   more_info: >
     <p>Bucaramanga, Colombia</p>
-    <p>Computational imaging · Deep learning</p>
+    <p>Computational imaging · Deep optics</p>
 
 selected_papers: true
 social: true
@@ -24,16 +24,24 @@ latest_posts:
   enabled: false
 ---
 
-I am **Emmanuel Martínez**, a Ph.D. candidate in Computer Science at Universidad Industrial de Santander. My research sits at the intersection of **computational imaging**, **spectral imaging**, and **deep learning**.
+I am **Emmanuel Martínez**, a Ph.D. candidate in Computer Science at Universidad Industrial de Santander. My research sits at the intersection of **computational imaging**, **spectral imaging**, **compressive sensing**, and **deep learning**.
 
-I am interested in learning imaging systems end to end: connecting the optical acquisition process with data-driven models so that sensing and inference are optimized together. My current work explores task-aware spectral acquisition, inverse problems, and efficient models for image classification, segmentation, and reconstruction.
+I design learning-based methods that connect optical acquisition with computational reconstruction and inference. My work spans task-aware spectral sensing, generative models, inverse problems, computational calibration, and efficient processing of coded measurements.
 
 ### research interests
 
 - Computational and spectral imaging
+- Compressive sensing and inverse problems
 - Deep learning for inverse problems
 - End-to-end optical system design
 - Hyperspectral classification and material segmentation
-- Generative models for image reconstruction
+- Generative and diffusion models for image reconstruction
 
-My recent work on deep spectral band selection learns a compact set of task-relevant wavelengths while preserving downstream performance. The method links a differentiable optical encoder with neural models for classification and segmentation, reducing acquisition requirements in practical spectral imaging systems.
+My recent research includes deep spectral band selection for task-aware hyperspectral sensing, conditional diffusion with augmented measurements, generative spectral image models, robust calibration for compressive spectral imaging, and efficient processing of coded optical measurements.
+
+### research at a glance
+
+- **Spectral acquisition:** learning compact, task-relevant optical measurements.
+- **Reconstruction:** solving compressive inverse problems with diffusion and generative priors.
+- **Spectral generation:** producing and augmenting spectral data from compact latent or RGB representations.
+- **Efficient computation:** exploiting sensing structure for faster recovery and calibration.
