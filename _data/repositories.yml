@@ -1,0 +1,9 @@
+github_users:
+  - Enmartz
+
+repo_description_lines_max: 3
+
+github_repos:
+  - Enmartz/DSBS
+  - Enmartz/diffcs
+  - Enmartz/Clasificacion-de-dolencias-mediante-texto-y-audio
