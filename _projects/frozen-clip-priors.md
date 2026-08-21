@@ -42,8 +42,8 @@ A lightweight unrolled solver that turns frozen CLIP representations into robust
 </nav>
 
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/teaser.svg' | relative_url }}" alt="Poisson demosaicing example comparing the noisy measurement, the self-supervised reconstruction, the supervised reconstruction, and the reference image." loading="eager">
-  <figcaption>Self-supervised reconstruction approaches its supervised counterpart despite training without clean targets.</figcaption>
+  <img src="{{ '/assets/img/frozen-clip-priors/teaser.svg' | relative_url }}" alt="Schematic overview of the Frozen CLIP Priors reconstruction pipeline." loading="eager">
+  <figcaption>Project overview: explicit data consistency is coupled with a frozen CLIP prior and a self-supervised measurement-domain objective.</figcaption>
 </figure>
 
 <section id="overview" class="fcp-section">
@@ -104,10 +104,10 @@ The method is evaluated on CFA demosaicing and deblurring over BSDS500 and DIV2K
 </div>
 
 <div style="height:1.8rem"></div>
-<div class="fcp-result-head"><h3>Poisson demosaicing</h3><span>BSDS500 · γ = 0.01 qualitative examples</span></div>
+<div class="fcp-result-head"><h3>Poisson demosaicing</h3><span>BSDS500 · γ = 0.05 quantitative summary</span></div>
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/demosaicing.svg' | relative_url }}" alt="Qualitative Poisson demosaicing comparison on BSDS500." loading="lazy">
-  <figcaption>The proposed variants recover fine structures and color consistency while the self-supervised model remains close to supervised training.</figcaption>
+  <img src="{{ '/assets/img/frozen-clip-priors/demosaicing.svg' | relative_url }}" alt="Quantitative severe-noise Poisson demosaicing comparison on BSDS500." loading="lazy">
+  <figcaption>Under severe Poisson noise, Ours (Self) improves both PSNR and SSIM over the strongest reported baselines while remaining close to Ours (Sup).</figcaption>
 </figure>
 
 <div class="fcp-table-wrap">
@@ -123,10 +123,10 @@ The method is evaluated on CFA demosaicing and deblurring over BSDS500 and DIV2K
 </div>
 
 <div style="height:1.6rem"></div>
-<div class="fcp-result-head"><h3>Poisson deblurring</h3><span>BSDS500 · γ = 0.01 qualitative examples</span></div>
+<div class="fcp-result-head"><h3>Poisson deblurring</h3><span>BSDS500 · γ = 0.05 quantitative summary</span></div>
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/deblurring.svg' | relative_url }}" alt="Qualitative Poisson deblurring comparison on BSDS500." loading="lazy">
-  <figcaption>The operator-aware update reduces residual blur and structured artifacts; Ours (Self) remains consistently near Ours (Sup).</figcaption>
+  <img src="{{ '/assets/img/frozen-clip-priors/deblurring.svg' | relative_url }}" alt="Quantitative severe-noise Poisson deblurring comparison on BSDS500." loading="lazy">
+  <figcaption>Under severe Poisson noise, the self-supervised solver reaches 27.45 dB / 0.7532 and remains close to the supervised variant.</figcaption>
 </figure>
 
 <div class="fcp-table-wrap">
@@ -176,7 +176,7 @@ Beyond synthetic Poisson simulations, the framework is tested on a real low-ligh
 </p>
 
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/sid.svg' | relative_url }}" alt="Real photon-limited SID experiment comparing raw mosaic input, self-supervised and supervised reconstructions, and reference." loading="lazy">
+  <img src="{{ '/assets/img/frozen-clip-priors/sid.svg' | relative_url }}" alt="Metric summary of the real photon-limited SID experiment." loading="lazy">
   <figcaption>Real SID data: the self-supervised reconstruction improves from 14.95 dB / 0.1731 at the raw input to 26.37 dB / 0.6482 without clean-target supervision.</figcaption>
 </figure>
 </section>
