@@ -22,8 +22,9 @@
 .fcp-page a { text-decoration: none; }
 
 .fcp-wide {
+  position: relative;
+  left: 50%;
   width: min(1180px, 94vw);
-  margin-left: 50%;
   transform: translateX(-50%);
 }
 
@@ -271,7 +272,7 @@
 }
 
 @media (max-width: 560px) {
-  .fcp-wide { width: 96vw; }
+  .fcp-wide { left: 0; width: 100%; transform: none; }
   .fcp-metrics { grid-template-columns: 1fr 1fr; }
   .fcp-card, .fcp-metric { border-radius: 11px; }
   .fcp-figure img { border-radius: 10px; }
