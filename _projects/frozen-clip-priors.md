@@ -2,7 +2,7 @@
 layout: page
 title: Frozen CLIP Priors for Robust Self-Supervised Poisson Inverse Problems
 description: Foundation-driven priors for photon-limited inverse imaging without clean ground truth.
-img: assets/img/frozen-clip-priors/teaser.svg
+img: assets/img/frozen-clip-priors/method.webp
 importance: 1
 category: research
 related_publications: false
@@ -42,8 +42,11 @@ A lightweight unrolled solver that turns frozen CLIP representations into robust
 </nav>
 
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/teaser.svg' | relative_url }}" alt="Schematic overview of the Frozen CLIP Priors reconstruction pipeline." loading="eager">
-  <figcaption>Project overview: explicit data consistency is coupled with a frozen CLIP prior and a self-supervised measurement-domain objective.</figcaption>
+  <div style="display:flex;gap:0;overflow:hidden;border-radius:14px;background:#fff">
+    <img src="{{ '/assets/img/frozen-clip-priors/demosaicing-1.webp' | relative_url }}" alt="Left half of the paper's Poisson demosaicing comparison on BSDS500." loading="eager" style="width:50%;border:0;border-radius:0">
+    <img src="{{ '/assets/img/frozen-clip-priors/demosaicing-2.webp' | relative_url }}" alt="Right half of the paper's Poisson demosaicing comparison on BSDS500." loading="eager" style="width:50%;border:0;border-radius:0">
+  </div>
+  <figcaption>Qualitative Poisson demosaicing comparison from the paper, showing the noisy measurement, baselines, Ours (Self), Ours (Sup), and the reference.</figcaption>
 </figure>
 
 <section id="overview" class="fcp-section">
@@ -75,8 +78,8 @@ The solver unrolls a small number of ADMM iterations. At iteration <em>t</em>, t
 </p>
 
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/method.svg' | relative_url }}" alt="Architecture of the proposed ADMM-inspired unrolled reconstruction method with frozen CLIP encoder and trainable decoder." loading="lazy">
-  <figcaption>Proposed reconstruction architecture. A closed-form data-consistency update is alternated with a CLIP-based prior update across the unrolled iterations.</figcaption>
+  <img src="{{ '/assets/img/frozen-clip-priors/method.webp' | relative_url }}" alt="Architecture of the proposed ADMM-inspired unrolled reconstruction method with frozen CLIP encoder and trainable decoder." loading="lazy">
+  <figcaption>Proposed reconstruction architecture from the paper. A closed-form data-consistency update is alternated with a CLIP-based prior update across the unrolled iterations.</figcaption>
 </figure>
 
 <div class="fcp-equation">
@@ -104,10 +107,13 @@ The method is evaluated on CFA demosaicing and deblurring over BSDS500 and DIV2K
 </div>
 
 <div style="height:1.8rem"></div>
-<div class="fcp-result-head"><h3>Poisson demosaicing</h3><span>BSDS500 · γ = 0.05 quantitative summary</span></div>
+<div class="fcp-result-head"><h3>Poisson demosaicing</h3><span>BSDS500 · γ = 0.01 qualitative comparison</span></div>
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/demosaicing.svg' | relative_url }}" alt="Quantitative severe-noise Poisson demosaicing comparison on BSDS500." loading="lazy">
-  <figcaption>Under severe Poisson noise, Ours (Self) improves both PSNR and SSIM over the strongest reported baselines while remaining close to Ours (Sup).</figcaption>
+  <div style="display:flex;gap:0;overflow:hidden;border-radius:14px;background:#fff">
+    <img src="{{ '/assets/img/frozen-clip-priors/demosaicing-1.webp' | relative_url }}" alt="Left half of the paper's Poisson demosaicing comparison on BSDS500." loading="lazy" style="width:50%;border:0;border-radius:0">
+    <img src="{{ '/assets/img/frozen-clip-priors/demosaicing-2.webp' | relative_url }}" alt="Right half of the paper's Poisson demosaicing comparison on BSDS500." loading="lazy" style="width:50%;border:0;border-radius:0">
+  </div>
+  <figcaption>Paper figure for Poisson demosaicing on BSDS500 at γ = 0.01. Columns show the measurement, baselines, Ours (Self), Ours (Sup), and the reference, with per-image PSNR/SSIM.</figcaption>
 </figure>
 
 <div class="fcp-table-wrap">
@@ -123,10 +129,13 @@ The method is evaluated on CFA demosaicing and deblurring over BSDS500 and DIV2K
 </div>
 
 <div style="height:1.6rem"></div>
-<div class="fcp-result-head"><h3>Poisson deblurring</h3><span>BSDS500 · γ = 0.05 quantitative summary</span></div>
+<div class="fcp-result-head"><h3>Poisson deblurring</h3><span>BSDS500 · γ = 0.01 qualitative comparison</span></div>
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/deblurring.svg' | relative_url }}" alt="Quantitative severe-noise Poisson deblurring comparison on BSDS500." loading="lazy">
-  <figcaption>Under severe Poisson noise, the self-supervised solver reaches 27.45 dB / 0.7532 and remains close to the supervised variant.</figcaption>
+  <div style="display:flex;gap:0;overflow:hidden;border-radius:14px;background:#fff">
+    <img src="{{ '/assets/img/frozen-clip-priors/deblurring-1.webp' | relative_url }}" alt="Left half of the paper's Poisson deblurring comparison on BSDS500." loading="lazy" style="width:50%;border:0;border-radius:0">
+    <img src="{{ '/assets/img/frozen-clip-priors/deblurring-2.webp' | relative_url }}" alt="Right half of the paper's Poisson deblurring comparison on BSDS500." loading="lazy" style="width:50%;border:0;border-radius:0">
+  </div>
+  <figcaption>Paper figure for Poisson deblurring on BSDS500 at γ = 0.01, comparing the measurement, baselines, Ours (Self), Ours (Sup), and the reference.</figcaption>
 </figure>
 
 <div class="fcp-table-wrap">
@@ -176,7 +185,7 @@ Beyond synthetic Poisson simulations, the framework is tested on a real low-ligh
 </p>
 
 <figure class="fcp-figure fcp-wide">
-  <img src="{{ '/assets/img/frozen-clip-priors/sid.svg' | relative_url }}" alt="Metric summary of the real photon-limited SID experiment." loading="lazy">
+  <img src="{{ '/assets/img/frozen-clip-priors/sid.webp' | relative_url }}" alt="Real photon-limited SID experiment from the paper, comparing raw mosaic input, Ours Self, Ours Sup, and the reference." loading="lazy">
   <figcaption>Real SID data: the self-supervised reconstruction improves from 14.95 dB / 0.1731 at the raw input to 26.37 dB / 0.6482 without clean-target supervision.</figcaption>
 </figure>
 </section>
