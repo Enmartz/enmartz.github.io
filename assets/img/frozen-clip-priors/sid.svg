@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">Real photon-limited SID experiment</title>
+  <desc id="desc">Metric summary of raw input, self-supervised reconstruction, supervised reconstruction and reference for the SID experiment.</desc>
+  <defs><linearGradient id="accent" x1="0" x2="1"><stop stop-color="#b5179e"/><stop offset="1" stop-color="#7b2cbf"/></linearGradient></defs>
+  <rect width="1200" height="390" rx="26" fill="#faf9fb"/>
+  <g font-family="Inter,Arial,sans-serif">
+    <text x="60" y="55" font-size="26" font-weight="700" fill="#222">Real photon-limited data · SID</text>
+    <text x="60" y="84" font-size="15" fill="#666">Zero-shot adaptation from the corrupted image; no clean target is used for Ours (Self).</text>
+
+    <g>
+      <rect x="65" y="125" width="245" height="185" rx="20" fill="#fff" stroke="#ded8df"/>
+      <text x="187" y="165" text-anchor="middle" font-size="19" font-weight="700" fill="#333">Raw mosaic input</text>
+      <text x="187" y="224" text-anchor="middle" font-size="38" font-weight="700" fill="#777">14.95 dB</text>
+      <text x="187" y="258" text-anchor="middle" font-size="16" fill="#666">SSIM 0.1731</text>
+
+      <rect x="345" y="125" width="245" height="185" rx="20" fill="#fff" stroke="#b5179e" stroke-width="2"/>
+      <text x="467" y="165" text-anchor="middle" font-size="19" font-weight="700" fill="#b5179e">Ours (Self)</text>
+      <text x="467" y="224" text-anchor="middle" font-size="38" font-weight="700" fill="#b5179e">26.37 dB</text>
+      <text x="467" y="258" text-anchor="middle" font-size="16" fill="#666">SSIM 0.6482</text>
+      <text x="467" y="289" text-anchor="middle" font-size="13" fill="#777">no clean-target supervision</text>
+
+      <rect x="625" y="125" width="245" height="185" rx="20" fill="#fff" stroke="#7b2cbf" stroke-width="2"/>
+      <text x="747" y="165" text-anchor="middle" font-size="19" font-weight="700" fill="#7b2cbf">Ours (Sup)</text>
+      <text x="747" y="224" text-anchor="middle" font-size="38" font-weight="700" fill="#7b2cbf">29.66 dB</text>
+      <text x="747" y="258" text-anchor="middle" font-size="16" fill="#666">SSIM 0.8205</text>
+
+      <rect x="905" y="125" width="230" height="185" rx="20" fill="url(#accent)" opacity=".10" stroke="#c8b9d0"/>
+      <text x="1020" y="165" text-anchor="middle" font-size="19" font-weight="700" fill="#333">Reference</text>
+      <path d="M960 247 L996 209 L1018 228 L1060 177 L1095 211" fill="none" stroke="#8a5790" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="1020" y="286" text-anchor="middle" font-size="14" fill="#666">clean image for evaluation</text>
+    </g>
+
+    <text x="600" y="355" text-anchor="middle" font-size="16" font-weight="700" fill="#b5179e">Self-supervision gains +11.42 dB over the raw input in this held-out patch.</text>
+  </g>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 560" role="img" aria-labelledby="title desc">
+  <title id="title">ADMM-inspired Frozen CLIP reconstruction method</title>
+  <desc id="desc">Unrolled iterations alternate data consistency with a frozen CLIP encoder and trainable decoder prior, followed by a dual update.</desc>
+  <defs>
+    <linearGradient id="head" x1="0" x2="1"><stop stop-color="#b5179e"/><stop offset="1" stop-color="#7b2cbf"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L0 6 L9 3 z" fill="#6d6d72"/></marker>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity=".10"/></filter>
+  </defs>
+  <rect width="1400" height="560" rx="28" fill="#faf9fb"/>
+  <text x="700" y="52" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="28" font-weight="700" fill="#222">ADMM-inspired unrolling with a frozen foundation prior</text>
+
+  <g font-family="Inter,Arial,sans-serif" filter="url(#shadow)">
+    <rect x="55" y="155" width="175" height="170" rx="18" fill="#fff" stroke="#ded8df"/>
+    <text x="142" y="193" text-anchor="middle" font-size="19" font-weight="700" fill="#222">Input</text>
+    <text x="142" y="238" text-anchor="middle" font-size="32" font-weight="700" fill="#b5179e">y</text>
+    <text x="142" y="274" text-anchor="middle" font-size="14" fill="#666">Poisson measurement</text>
+
+    <rect x="300" y="105" width="830" height="350" rx="24" fill="#fff" stroke="#d8d2da"/>
+    <rect x="300" y="105" width="830" height="54" rx="24" fill="url(#head)"/>
+    <rect x="300" y="135" width="830" height="24" fill="url(#head)"/>
+    <text x="715" y="140" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">Unrolled iteration t = 1 … T</text>
+
+    <rect x="345" y="205" width="205" height="145" rx="18" fill="#fbf5fa" stroke="#b5179e" stroke-width="1.5"/>
+    <text x="447" y="240" text-anchor="middle" font-size="18" font-weight="700" fill="#222">Data consistency</text>
+    <text x="447" y="280" text-anchor="middle" font-size="26" font-weight="700" fill="#b5179e">xᵗ⁺¹</text>
+    <text x="447" y="314" text-anchor="middle" font-size="14" fill="#666">closed form from A, y</text>
+
+    <rect x="610" y="184" width="270" height="188" rx="18" fill="#faf8fc" stroke="#8265a2" stroke-width="1.5"/>
+    <text x="745" y="220" text-anchor="middle" font-size="18" font-weight="700" fill="#222">CLIP denoising prior</text>
+    <rect x="648" y="244" width="194" height="43" rx="10" fill="#eee9f5"/>
+    <text x="745" y="271" text-anchor="middle" font-size="15" font-weight="700" fill="#604080">Frozen RN50 encoder</text>
+    <rect x="648" y="300" width="194" height="43" rx="10" fill="#f6e8f4"/>
+    <text x="745" y="327" text-anchor="middle" font-size="15" font-weight="700" fill="#b5179e">Trainable decoder Gθ</text>
+    <text x="745" y="360" text-anchor="middle" font-size="13" fill="#666">zᵗ⁺¹</text>
+
+    <rect x="940" y="205" width="145" height="145" rx="18" fill="#f8f8f9" stroke="#c8c8cc"/>
+    <text x="1012" y="240" text-anchor="middle" font-size="18" font-weight="700" fill="#222">Dual update</text>
+    <text x="1012" y="282" text-anchor="middle" font-size="25" font-weight="700" fill="#555">uᵗ⁺¹</text>
+    <text x="1012" y="315" text-anchor="middle" font-size="13" fill="#666">agreement</text>
+
+    <rect x="1200" y="155" width="145" height="170" rx="18" fill="#fff" stroke="#ded8df"/>
+    <text x="1272" y="193" text-anchor="middle" font-size="19" font-weight="700" fill="#222">Output</text>
+    <text x="1272" y="238" text-anchor="middle" font-size="30" font-weight="700" fill="#b5179e">x̂</text>
+    <text x="1272" y="274" text-anchor="middle" font-size="14" fill="#666">after T iterations</text>
+  </g>
+
+  <g stroke="#6d6d72" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M237 240 H330"/><path d="M558 278 H595"/><path d="M888 278 H925"/><path d="M1092 240 H1185"/></g>
+  <path d="M1012 365 C1012 420 430 430 430 365" fill="none" stroke="#9b83b1" stroke-width="2.5" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+  <text x="710" y="433" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="13" fill="#765b8e">state passed to the next unrolled iteration</text>
+
+  <rect x="390" y="485" width="620" height="45" rx="14" fill="#f6e8f4"/>
+  <text x="700" y="513" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="15" fill="#702063">Only the lightweight decoder is optimized; CLIP features remain frozen.</text>
+</svg>
