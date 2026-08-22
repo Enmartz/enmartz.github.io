@@ -21,11 +21,11 @@
 
 .fcp-page a { text-decoration: none; }
 
+/* Keep every project figure aligned with the regular 850px content column. */
 .fcp-wide {
-  position: relative;
-  left: 50%;
-  width: min(1180px, 94vw);
-  transform: translateX(-50%);
+  width: 100%;
+  max-width: 850px;
+  margin-inline: auto;
 }
 
 .fcp-authors {
@@ -109,20 +109,46 @@
 .fcp-anchor-nav a:hover { color: var(--fcp-accent) !important; }
 
 .fcp-figure {
-  margin: 1.2rem 0 2.35rem;
+  width: 100%;
+  max-width: 850px;
+  margin: 1.2rem auto 2.35rem;
 }
 
-.fcp-figure img {
+.fcp-figure > img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 14px;
   border: 1px solid var(--fcp-border);
   background: #fff;
 }
 
+.fcp-figure-panel {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid var(--fcp-border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.fcp-figure-panel img {
+  display: block;
+  flex: 0 0 50%;
+  width: 50%;
+  min-width: 0;
+  max-width: 50%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+}
+
 .fcp-figure figcaption {
-  max-width: 950px;
+  max-width: 850px;
   margin: .7rem auto 0;
   color: var(--fcp-muted);
   font-size: .88rem;
@@ -210,17 +236,19 @@
   align-items: end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: .8rem;
+  max-width: 850px;
+  margin: 0 auto .8rem;
 }
 
 .fcp-result-head h3 { margin: 0; }
 .fcp-result-head span { color: var(--fcp-muted); font-size: .9rem; }
 
 .fcp-table-wrap {
+  max-width: 850px;
   overflow-x: auto;
   border: 1px solid var(--fcp-border);
   border-radius: 14px;
-  margin: 1rem 0;
+  margin: 1rem auto;
 }
 
 .fcp-table {
@@ -272,9 +300,9 @@
 }
 
 @media (max-width: 560px) {
-  .fcp-wide { left: 0; width: 100%; transform: none; }
+  .fcp-wide { width: 100%; max-width: 100%; }
   .fcp-metrics { grid-template-columns: 1fr 1fr; }
   .fcp-card, .fcp-metric { border-radius: 11px; }
-  .fcp-figure img { border-radius: 10px; }
+  .fcp-figure > img, .fcp-figure-panel { border-radius: 10px; }
   .fcp-result-head { align-items: flex-start; flex-direction: column; gap: .25rem; }
 }
